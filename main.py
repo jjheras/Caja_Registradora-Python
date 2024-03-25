@@ -212,7 +212,7 @@ def imprimirCompra(compra):
     
     for producto in productos:
         
-        listaCompra = f"nº:{producto["cantidad"]}  producto:{producto["producto"]}  €:{producto["precio"]}"
+        listaCompra = f"nº:{producto['cantidad']}  producto:{producto['producto']}  €:{producto['precio']}"
         textoCompra.insert(END,listaCompra + "\n")
 
     textoCompra.insert(END,f"Total compra: {totalCompra} \n")
@@ -286,7 +286,7 @@ def actualizarProducSuper(dicProductos):
     global producSuper
     listDelProduc = []
     for productosSuper in dicProductos:
-        listDelProduc.append(f"{productosSuper["producto"]} - {productosSuper["precio"]}")
+        listDelProduc.append(f"{productosSuper['producto']} - {productosSuper['precio']}")
     
     producSuper = listDelProduc
 
@@ -295,7 +295,7 @@ def actualizarCompra(dicCompra):
     global compra
     listaCompra = []
     for producCompra in dicCompra:
-        listaCompra.append(f"{producCompra["cantidad"]} - {producCompra["producto"]} - {producCompra["precio"]}")
+        listaCompra.append(f"{producCompra['cantidad']} - {producCompra['producto']} - {producCompra['precio']}")
     compra = listaCompra
 
 def actualizarProductos():
@@ -332,7 +332,7 @@ def imprimirTicket():
     pdf.set_font('courier','',10)
 
     for producto in productos:
-        listaCompra = f"nº:{producto["cantidad"]}  producto:{producto["producto"]}  precio:{producto["precio"]}"
+        listaCompra = f"nº:{producto['cantidad']}  producto:{producto['producto']}  precio:{producto['precio']}"
 
         pdf.cell(0,1, listaCompra, ln=True)
 
